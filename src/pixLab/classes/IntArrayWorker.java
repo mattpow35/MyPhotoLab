@@ -47,6 +47,24 @@ public class IntArrayWorker
 	  return count;
   }
   
+  public int getLargest()
+  {
+	  int largest = Integer.MIN_VALUE;
+	  
+	  for (int[] row : matrix)
+	  {
+		  for (int item : row)
+		  {
+			  if (item > largest)
+			  {
+				  largest = item;
+			  }
+		  }
+	  }
+	  
+	  return largest;
+  }
+  
   
   
   
