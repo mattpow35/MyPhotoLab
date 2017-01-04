@@ -87,15 +87,20 @@ public class IntArrayWorker
   {
     for (int row = 0; row < matrix.length; row++)
     {
-      for (int col = 0; col < matrix[0].length; 
-           col++)
+      for (int col = 0; col < matrix[0].length; col++)
       {
         if (row < col)
+        {
           matrix[row][col] = 1;
+        }
         else if (row == col)
+        {
           matrix[row][col] = 2;
+        }
         else
+        {
           matrix[row][col] = 3;
+        }
       }
     }
   }
