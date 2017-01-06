@@ -27,6 +27,14 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  public static void testMirrorVerticalRightoToLeft()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  koala.explore();
+	  koala.mirrorVerticalRightToLeft();
+	  koala.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
