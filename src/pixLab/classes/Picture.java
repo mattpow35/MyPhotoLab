@@ -276,6 +276,13 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+  public void scale()
+  {
+	  Picture p = new Picture("elephant.jpg");
+	  Picture smallP = p.scale(0.25,0.25);
+	  smallP.write("smallElephant.jpg");
+  }
 
   /** Method to create a collage of several pictures */
   public void createCollage()
