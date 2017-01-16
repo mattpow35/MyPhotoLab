@@ -65,10 +65,20 @@ public class IntArrayWorker
 	  return largest;
   }
   
-  public int getColTotal(int col)
+  public int getColTotal(int colToTotal)
   {
 	 int total = 0;
 	 
+	for (int row = 0; row < matrix.length; row++)
+	{
+		for (int col = 0; col < matrix[0].length; col++)
+		{
+			if(col == colToTotal)
+			{
+				total = total + matrix[row][col];
+			}
+		}
+	}
 	 
 	 return total;
   }
