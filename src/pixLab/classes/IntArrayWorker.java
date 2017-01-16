@@ -65,6 +65,14 @@ public class IntArrayWorker
 	  return largest;
   }
   
+  public int getColTotal(int col)
+  {
+	 int total = 0;
+	 
+	 
+	 return total;
+  }
+  
   
   
   
