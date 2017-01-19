@@ -266,6 +266,26 @@ public class Picture extends SimplePicture
 			 
   }
   
+  public void mirrowSnowmanArms()
+  {
+	  int mirrorPoint = 195;
+	  Pixel topPixel = null;
+	  Pixel bottomPixel = null;
+	  int count = 0;
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 165; row < mirrorPoint; row++)
+	  {
+		  for (int col = 100; col < 295; col ++)
+		  {
+			  topPixel = pixels[row][col];
+			  bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+			  bottomPixel.setColor(topPixel.getColor());
+			  
+		  }
+	  }
+  }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
