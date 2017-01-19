@@ -342,6 +342,8 @@ public class Picture extends SimplePicture
 		  {
 			  if (row != col && row < pixels[0].length && col < pixels.length)
 			  {
+				  //inits for location must be after you know the index is not out of bounds
+				  //these inits must be here after the if statement.
 				  topRight = pixels[row][col];
 				  bottomLeft = pixels[col][row];
 				  

@@ -102,10 +102,14 @@ public class PictureTester
   
   public static void testMirrorDiagonal()
   {
-	  Picture koala = new Picture("redMotorcycle.jpg");
+	  Picture koala = new Picture("koala.jpg");
+	  Picture scooter = new Picture("blueMotorcycle.jpg");
 	  koala.explore();
+	  scooter.explore();
 	  koala.mirrorDiagonal();
+	  scooter.mirrorDiagonal();
 	  koala.explore();
+	  scooter.explore();
   }
   
   /** Main method for testing.  Every class can have a main
