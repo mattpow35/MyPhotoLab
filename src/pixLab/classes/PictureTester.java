@@ -84,6 +84,14 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorSeagull()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.mirrorSeagull();
+	  seagull.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -112,6 +120,18 @@ public class PictureTester
 	  scooter.explore();
   }
   
+  public static void testMirrorDiagonalBottomRightToTopLeft()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  Picture scooter = new Picture("blueMotorcycle.jpg");
+	  koala.explore();
+	  scooter.explore();
+	  koala.mirrorDiagonalBottomRightToTopLeft();
+	  scooter.mirrorDiagonalBottomRightToTopLeft();
+	  koala.explore();
+	  scooter.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -132,8 +152,9 @@ public class PictureTester
 //	  testMirrorHorizontalTopToBottom();
 //    testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
-    testMirrorDiagonal();
+    testMirrorSeagull();
+    //testMirrorDiagonal();
+    //testMirrorDiagonalBottomRightToTopLeft();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

@@ -246,6 +246,26 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void mirrorSeagull()
+  {
+	  int mirrorPoint = 350;
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  int count = 0;
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 224; row < 330; row ++)
+	  {
+		  for(int col = 230; col < mirrorPoint; col++)
+		  {
+			  leftPixel = pixels[row][col];
+			  rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+			  rightPixel.setColor(leftPixel.getColor());
+		  }
+	  }
+			 
+  }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -348,6 +368,30 @@ public class Picture extends SimplePicture
 				  bottomLeft = pixels[col][row];
 				  
 				  bottomLeft.setColor(topRight.getColor());
+			  }
+				  
+		  }
+	  }
+	  
+  }
+  
+  public void mirrorDiagonalBottomRightToTopLeft()
+  {
+	  Pixel topLeft = null;
+	  Pixel bottomRight = null;
+	  Pixel[][] pixels = this.getPixels2D();
+	  int mirrorPoint = Math.min(pixels.length, pixels[0].length)-1;
+	  
+	  for (int row = 0; row < pixels.length - 1; row ++)
+	  {
+		  for (int col = 0; col < pixels[0].length - 1; col ++)
+		  {
+			  if(row + col != mirrorPoint && row < pixels[0].length && col < pixels.length)
+			  {
+				  topLeft = pixels[row][col];
+				  bottomRight = pixels[mirrorPoint - col][mirrorPoint - row];
+				  
+				  topLeft.setColor(bottomRight.getColor());
 			  }
 				  
 		  }
