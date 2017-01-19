@@ -326,7 +326,33 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+    
+    
   }
+  
+  public void mirrorDiagonal()
+  {
+	  Pixel topRight = null;
+	  Pixel bottomLeft = null;
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length - 1; row ++)
+	  {
+		  for (int col = 0; col < pixels[0].length - 1; col ++)
+		  {
+			  if (row != col && row < pixels[0].length && col < pixels.length)
+			  {
+				  topRight = pixels[row][col];
+				  bottomLeft = pixels[col][row];
+				  
+				  bottomLeft.setColor(topRight.getColor());
+			  }
+				  
+		  }
+	  }
+	  
+  }
+
   
   
   /* Main method for testing - each class in Java can have a main 

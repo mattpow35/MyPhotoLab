@@ -100,6 +100,14 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture koala = new Picture("redMotorcycle.jpg");
+	  koala.explore();
+	  koala.mirrorDiagonal();
+	  koala.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -121,7 +129,7 @@ public class PictureTester
 //    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
