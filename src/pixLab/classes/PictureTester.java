@@ -159,13 +159,13 @@ public class PictureTester
 //	  testMirrorHorizontalBottomToTop();
 //	  testMirrorHorizontalTopToBottom();
 //    testMirrorTemple();
-    testMirrorSnowmanArms();
+    //testMirrorSnowmanArms();
     //testMirrorSeagull();
     //testMirrorDiagonal();
     //testMirrorDiagonalBottomRightToTopLeft();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
