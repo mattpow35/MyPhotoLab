@@ -116,6 +116,13 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(12);
+    swan.explore();
+  }
+  
   public static void testMirrorDiagonal()
   {
 	  Picture koala = new Picture("koala.jpg");
@@ -166,6 +173,7 @@ public class PictureTester
     //testCollage();
     //testCopy();
     testEdgeDetection();
+    testEdgeDetection2();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

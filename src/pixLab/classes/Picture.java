@@ -370,6 +370,38 @@ public class Picture extends SimplePicture
     
   }
   
+  public void edgeDetection2(int edgeDist)
+  {
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel bottomPixel = null;
+	  Pixel diagonalPixel = null;
+	  Pixel [][] pixels = this.getPixels2D();
+	  Color rightColor = null;
+	  Color bottomColor = null;
+	  Color diagonalColor = null;
+	  for (int row=0; row < pixels.length - 1; row ++)
+	  {
+		  for (int col = 0; col < pixels[0].length -1; col ++)
+		  {
+			  leftPixel = pixels[row][col];
+			  rightPixel = pixels[row][col + 1];
+			  bottomPixel = pixels[row + 1][col];
+			  diagonalPixel = pixels [row + 1][col + 1];
+			  rightColor = rightPixel.getColor();
+			  bottomColor = bottomPixel.getColor();
+			  diagonalColor = diagonalPixel.getColor();
+			  if(leftPixel.colorDistance(rightColor) > edgeDist && leftPixel.colorDistance(bottomColor) > edgeDist && leftPixel.colorDistance(diagonalColor)
+					  > edgeDist)
+			  {
+				  leftPixel.setColor(Color.BLACK);  
+			  }
+			  else
+				  leftPixel.setColor(Color.WHITE);
+		  }
+	  }
+  }
+  
   public void mirrorDiagonal()
   {
 	  Pixel topRight = null;
