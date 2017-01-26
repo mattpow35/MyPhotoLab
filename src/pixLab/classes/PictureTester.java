@@ -163,6 +163,35 @@ public class PictureTester
 	  yoda.explore();
   }
   
+  public static void testCopy2()
+  {
+	  Picture starWars = new Picture("starWarsLogo.jpg");
+	  Picture allMovies = new Picture("allStarWarsMovies.jpg");
+	  starWars.explore();
+	  starWars.copy2(allMovies, 20, 155, 20, 250 );
+	  starWars.explore();
+  }
+  
+  public static void testStarWarsCollage()
+  {
+	  Picture starWars = new Picture("starWarsLogo.jpg");
+	  starWars.explore();
+	  starWars.createStarWarsCollage();
+	  starWars.explore();
+  }
+  
+  public static void explorePic()
+  {
+	  Picture yoda = new Picture("yoda.jpg");
+	  Picture darthVader = new Picture("darthVader.jpg");
+	  Picture forceAwakens = new Picture("forceAwakens.jpg");
+	  Picture starWars = new Picture("starWarsLogo.jpg");
+//	  yoda.explore();
+//	  darthVader.explore();
+//	  forceAwakens.explore();
+	  starWars.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -170,6 +199,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+	//explorePic();
+	  //testCopy2();
 //    testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -179,7 +210,7 @@ public class PictureTester
     //testFixUnderwater();
 	//testMirrorVertical();
 	 // testFullRandom();
-	  testFullRandomRed();
+	  //testFullRandomRed();
 //    testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontalBottomToTop();
 //	  testMirrorHorizontalTopToBottom();
@@ -189,6 +220,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testMirrorDiagonalBottomRightToTopLeft();
     //testCollage();
+    testStarWarsCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

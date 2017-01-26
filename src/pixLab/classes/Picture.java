@@ -300,21 +300,37 @@ public class Picture extends SimplePicture
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow = 0, toRow = startRow; 
-         fromRow < fromPixels.length &&
-         toRow < toPixels.length; 
-         fromRow++, toRow++)
+    for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length &&toRow < toPixels.length; fromRow++, toRow++)
     {
-      for (int fromCol = 0, toCol = startCol; 
-           fromCol < fromPixels[0].length &&
-           toCol < toPixels[0].length;  
-           fromCol++, toCol++)
+      for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length &&toCol < toPixels[0].length;  fromCol++, toCol++)
       {
         fromPixel = fromPixels[fromRow][fromCol];
         toPixel = toPixels[toRow][toCol];
         toPixel.setColor(fromPixel.getColor());
       }
     }   
+  }
+  
+  public void copy2(Picture fromPic, int startRow, int endRow, int startCol, int endCol)
+  {
+	  Pixel fromPixel = null;
+	  Pixel toPixel = null;
+	  Pixel [][] toPixels = this.getPixels2D();
+	  Pixel [][] fromPixels = fromPic.getPixels2D();
+	  int copyWidth = Math.min(endCol, fromPixels[0].length -2);
+	  int copyHeight = Math.min(endRow, fromPixels.length -1);
+	  
+	  for (int fromRow = 0, toRow = startRow; fromRow < endRow && toRow < copyHeight; fromRow++, toRow++)
+	  {
+		  for(int fromCol = 0, toCol = startCol; fromCol < endCol && toCol < copyWidth; fromCol++, toCol++)
+		  {
+			  fromPixel = fromPixels[fromRow][fromCol];
+			  toPixel = toPixels[toRow][toCol];
+			  toPixel.setColor(fromPixel.getColor());
+			
+		  }
+	  
+	  }
   }
   
   public void scale()
@@ -341,6 +357,16 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void createStarWarsCollage()
+  {
+	  Picture yoda = new Picture("yoda.jpg");
+	  Picture darthVader = new Picture("darthVader.jpg");
+	  Picture forceAwakens = new Picture("forceAwakens.jpg");
+      this.copy(yoda,10,10);
+      this.copy(darthVader,10,990);
+      this.copy(forceAwakens,645,450);
+      this.write("starWarsCollage.jpg");
+  }
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
@@ -482,16 +508,27 @@ public class Picture extends SimplePicture
 		  }
 	  }
   }
+
   
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+//    Picture beach = new Picture("beach.jpg");
+//    beach.explore();
+//    beach.zeroBlue();
+//    beach.explore();
+	  
+	  Picture starWarsPic = new Picture("hanAndChewy.jpg");
+	  starWarsPic.negate();
+	  starWarsPic.fullRandomRed();
+	  starWarsPic.mirrorHorizontalTopToBottom();
+	  starWarsPic.keepOnlyBlue();
+	  starWarsPic.mirrorDiagonal();
+	  starWarsPic.explore();
+	  starWarsPic.write("photProjectReadingFilters.jpg");
+	  
   }
   
 } // this } is the end of class Picture, put all new methods before this
