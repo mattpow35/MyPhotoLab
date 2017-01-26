@@ -451,7 +451,37 @@ public class Picture extends SimplePicture
 	  
   }
 
+  public void fullRandom()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for (Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int) (Math.random() * 256);
+			  int green = (int) (Math.random() * 256);
+			  int blue = (int) (Math.random() * 256);
+			  
+			  currentPixel.setColor(new Color(red, green, blue));
+			  
+		  }
+	  }
+  }
   
+  public void fullRandomRed()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for (Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int) (Math.random() * 256);
+			  
+			  currentPixel.setColor(new Color(red, currentPixel.getGreen(), currentPixel.getBlue() ));
+			  
+		  }
+	  }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 

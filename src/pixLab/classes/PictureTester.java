@@ -53,7 +53,7 @@ public class PictureTester
   
   public static void testMirrorVerticalRightToLeft()
   {
-	  Picture koala = new Picture("koala.jpg");
+	  Picture koala = new Picture("darthVader.jpg");
 	  koala.explore();
 	  koala.mirrorVerticalRightToLeft();
 	  koala.explore();
@@ -147,6 +147,22 @@ public class PictureTester
 	  scooter.explore();
   }
   
+  public static void testFullRandom()
+  {
+	  Picture yoda = new Picture("oldYoda.jpg");
+	  yoda.explore();
+	  yoda.fullRandom();
+	  yoda.explore();
+  }
+  
+  public static void testFullRandomRed()
+  {
+	  Picture yoda = new Picture("oldYoda.jpg");
+	  yoda.explore();
+	  yoda.fullRandomRed();
+	  yoda.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -158,10 +174,12 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
+    //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-	testMirrorVertical();
+	//testMirrorVertical();
+	 // testFullRandom();
+	  testFullRandomRed();
 //    testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontalBottomToTop();
 //	  testMirrorHorizontalTopToBottom();
