@@ -28,7 +28,7 @@ public class PictureTester
   
   public static void testNegate()
   {
-	  Picture beach = new Picture("beach.jpg");
+	  Picture beach = new Picture("allStarWarsMovies.jpg");
 	  beach.explore();
 	  beach.negate();
 	  beach.explore();
@@ -45,7 +45,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("yoda.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -158,10 +158,10 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+    testNegate();
     //testGrayscale();
     //testFixUnderwater();
-	//testMirrorVertical();
+	testMirrorVertical();
 //    testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontalBottomToTop();
 //	  testMirrorHorizontalTopToBottom();
@@ -172,8 +172,8 @@ public class PictureTester
     //testMirrorDiagonalBottomRightToTopLeft();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection();
+    //testEdgeDetection2();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
