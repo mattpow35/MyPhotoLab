@@ -508,6 +508,11 @@ public class Picture extends SimplePicture
 		  }
 	  }
   }
+  
+  public void glitchArt(Picture currentPic)
+  {
+	  
+  }
 
   
   /* Main method for testing - each class in Java can have a main 
