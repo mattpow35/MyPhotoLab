@@ -513,6 +513,29 @@ public class Picture extends SimplePicture
   {
 	  
   }
+  
+  public void createValentines()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for (Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  if(currentPixel.getRed() == 0 && currentPixel.getBlue() == 0 && currentPixel.getGreen() ==0)
+			  {
+				  currentPixel.setRed(255);
+			  }
+		  }
+	  }
+	  
+  this.addMessage("You R2 good for Me :)", 12, 25);
+  this.addMessage("TO:", 12, 55);
+  this.addMessage("FROM:", 12, 85);
+  this.write("R2D2Valentine");
+	  
+	  
+	
+  }
 
   
   /* Main method for testing - each class in Java can have a main 
@@ -525,15 +548,21 @@ public class Picture extends SimplePicture
 //    beach.zeroBlue();
 //    beach.explore();
 	  
-	  Picture starWarsPic = new Picture("hanAndChewy.jpg");
-	  starWarsPic.negate();
-	  starWarsPic.fullRandomRed();
-	  starWarsPic.mirrorHorizontalTopToBottom();
-	  starWarsPic.keepOnlyBlue();
-	  starWarsPic.mirrorDiagonal();
-	  starWarsPic.explore();
-	  starWarsPic.write("photProjectReadingFilters.jpg");
+//	  Picture starWarsPic = new Picture("hanAndChewy.jpg");
+//	  starWarsPic.negate();
+//	  starWarsPic.fullRandomRed();
+//	  starWarsPic.mirrorHorizontalTopToBottom();
+//	  starWarsPic.keepOnlyBlue();
+//	  starWarsPic.mirrorDiagonal();
+//	  starWarsPic.explore();
+//	  starWarsPic.write("photProjectReadingFilters.jpg");
 	  
+	  Picture background = new Picture("redBackground.jpg");
+	  Picture r2d2 = new Picture("r2andc3po.png");
+//	  background.explore();
+//	  r2d2.explore();
+	  r2d2.createValentines();
+	  r2d2.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
