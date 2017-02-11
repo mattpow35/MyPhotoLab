@@ -556,9 +556,9 @@ public class Picture extends SimplePicture
   
   public void glitchArt()
   {
+	  this.edgeDetection2(12);
 	  this.stripeRGB();
 	  this.sectionalRandom();
-	  
   }
   
   public void createValentines()
@@ -604,12 +604,13 @@ public class Picture extends SimplePicture
 //	  starWarsPic.explore();
 //	  starWarsPic.write("photProjectReadingFilters.jpg");
 	  
-	  Picture background = new Picture("redBackground.jpg");
-	  Picture r2d2 = new Picture("r2andc3po.png");
-//	  background.explore();
+//	  Picture background = new Picture("redBackground.jpg");
+//	  Picture r2d2 = new Picture("r2andc3po.png");
+//	  r2d2.createValentines();
 //	  r2d2.explore();
-	  r2d2.createValentines();
-	  r2d2.explore();
+	  
+	  Picture newHope = new Picture("newHope.jpg");
+	  newHope.glitchArt();
   }
   
 } // this } is the end of class Picture, put all new methods before this
