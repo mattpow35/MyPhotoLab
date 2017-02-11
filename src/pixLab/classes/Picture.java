@@ -111,6 +111,32 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void stripeRGB()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  if(col < pixels[0].length /3)
+			  {
+				  pixels[row][col].setRed(75);
+				  pixels[row][col].setGreen(75);
+			  }
+			  else if(col < (pixels[0].length /3) + (pixels[0].length /3))
+			  {
+				  pixels[row][col].setBlue(75);
+				  pixels[row][col].setGreen(75);
+			  }
+			  else
+			  {
+				  pixels[row][col].setBlue(75);
+				  pixels[row][col].setRed(75);
+			  }
+		  }
+	  }
+  }
+  
   public void negate()
   {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -509,8 +535,29 @@ public class Picture extends SimplePicture
 	  }
   }
   
-  public void glitchArt(Picture currentPic)
+  public void sectionalRandom()
   {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(int row = 0; row < currentPicture.length; row++)
+	  {
+		  for(int col = 0; col < currentPicture[0].length; col++)
+		  {
+			  if (row % 15 == 0)
+			  {
+				  int red = (int) (Math.random() * 256);
+				  int green = (int) (Math.random() * 256);
+				  int blue = (int) (Math.random() * 256);
+				  
+				  currentPicture[row][col].setColor(new Color(red,green,blue));
+			  }
+		  }
+	  }
+  }
+  
+  public void glitchArt()
+  {
+	  this.stripeRGB();
+	  this.sectionalRandom();
 	  
   }
   

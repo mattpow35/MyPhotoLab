@@ -26,6 +26,14 @@ public class PictureTester
 	  beach.explore();
   }
   
+  public static void testStripeRGB()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.stripeRGB();
+	  beach.explore();
+  }
+  
   public static void testNegate()
   {
 	  Picture beach = new Picture("allStarWarsMovies.jpg");
@@ -163,6 +171,14 @@ public class PictureTester
 	  yoda.explore();
   }
   
+  public static void testRandomSectional()
+  {
+	  Picture yoda = new Picture("oldYoda.jpg");
+	  yoda.explore();
+	  yoda.sectionalRandom();
+	  yoda.explore();
+  }
+  
   public static void testCopy2()
   {
 	  Picture starWars = new Picture("starWarsLogo.jpg");
@@ -192,6 +208,14 @@ public class PictureTester
 	  starWars.explore();
   }
   
+  public static void testGlitchArt()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.glitchArt();
+	  beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -205,6 +229,7 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
+	  //testStripeRGB();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
@@ -220,7 +245,8 @@ public class PictureTester
     //testMirrorDiagonal();
     //testMirrorDiagonalBottomRightToTopLeft();
     //testCollage();
-    testStarWarsCollage();
+    //testStarWarsCollage();
+    //testRandomSectional();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
@@ -231,5 +257,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  
+	  testGlitchArt();
   }
 }
