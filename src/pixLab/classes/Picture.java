@@ -609,8 +609,9 @@ public class Picture extends SimplePicture
 //	  r2d2.createValentines();
 //	  r2d2.explore();
 	  
-	  Picture newHope = new Picture("newHope.jpg");
-	  newHope.glitchArt();
+	  Picture pic = new Picture("beach.jpg");
+	  pic.glitchArt();
+	  pic.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
