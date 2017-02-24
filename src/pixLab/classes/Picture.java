@@ -559,6 +559,7 @@ public class Picture extends SimplePicture
 	  this.edgeDetection2(12);
 	  this.stripeRGB();
 	  this.sectionalRandom();
+	  this.write("glitchArt.jpg");
   }
   
   public void createValentines()
@@ -578,7 +579,7 @@ public class Picture extends SimplePicture
   this.addMessage("You R2 good for Me :)", 12, 25);
   this.addMessage("TO:", 12, 55);
   this.addMessage("FROM:", 12, 85);
-  this.write("R2D2Valentine");
+  this.write("R2D2Valentine.jpg");
 	  
 	  
 	
