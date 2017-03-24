@@ -202,10 +202,11 @@ public class PictureTester
 	  Picture darthVader = new Picture("darthVader.jpg");
 	  Picture forceAwakens = new Picture("forceAwakens.jpg");
 	  Picture starWars = new Picture("starWarsLogo.jpg");
+	  Picture greenScreen = new Picture("newSpidermanGreenScreen.jpg");
 //	  yoda.explore();
 //	  darthVader.explore();
 //	  forceAwakens.explore();
-	  starWars.explore();
+	  greenScreen.explore();
   }
   
   public static void testGlitchArt()
@@ -214,6 +215,16 @@ public class PictureTester
 	  beach.explore();
 	  beach.glitchArt();
 	  beach.explore();
+  }
+  
+  public static void testChromakey()
+  {
+	  Picture moon = new Picture("moon-surface.jpg");
+	  Picture spiderman = new Picture("newSpidermanGreenScreen.jpg");
+	  moon.explore();
+	  spiderman.explore();
+	  spiderman.chromakeyGreenScreen(moon);
+	  spiderman.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -257,7 +268,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	  
-	  testGlitchArt();
+	  //testGlitchArt();
+	  testChromakey();
   }
 }

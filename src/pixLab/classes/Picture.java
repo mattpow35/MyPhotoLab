@@ -584,6 +584,24 @@ public class Picture extends SimplePicture
 	  
 	
   }
+  
+  public void chromakeyGreenScreen(Picture backgroundPic)
+  {
+	  Pixel [][] originalPicture = this.getPixels2D();
+	  Pixel [][] backgroundPicture = backgroundPic.getPixels2D();
+	  
+	  for(int row = 0; row < originalPicture.length; row++)
+	  {
+		  for(int col = 0; col < originalPicture[0].length; col++)
+		  {
+			  if(originalPicture[row][col].getGreen() >= 230 && originalPicture[row][col].getRed() < 50 || originalPicture[row][col].getBlue() < 50)
+			  {
+				 originalPicture[row][col].setColor(backgroundPicture[row][col].getColor());
+			  }
+		  }
+	  }
+	  
+  }
 
   
   /* Main method for testing - each class in Java can have a main 
@@ -610,9 +628,10 @@ public class Picture extends SimplePicture
 //	  r2d2.createValentines();
 //	  r2d2.explore();
 	  
-	  Picture pic = new Picture("beach.jpg");
-	  pic.glitchArt();
+	  Picture pic = new Picture("greenScreenBackground.jpg");
+	  pic.copy(new Picture("spiderManGreenScreen.jpg"), 150, 200);
 	  pic.explore();
+	  pic.write("newSpidermanGreenScreen.jpg");
   }
   
 } // this } is the end of class Picture, put all new methods before this
