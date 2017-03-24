@@ -584,7 +584,9 @@ public class Picture extends SimplePicture
 	  
 	
   }
-  
+  // takes a picture and adds it to the background of another picture.
+  // the picture getting the new background must have a green screen background
+  // the pictures need to be the same size.
   public void chromakeyGreenScreen(Picture backgroundPic)
   {
 	  Pixel [][] originalPicture = this.getPixels2D();
@@ -600,7 +602,6 @@ public class Picture extends SimplePicture
 			  }
 		  }
 	  }
-	  
   }
 
   
@@ -628,10 +629,13 @@ public class Picture extends SimplePicture
 //	  r2d2.createValentines();
 //	  r2d2.explore();
 	  
-	  Picture pic = new Picture("greenScreenBackground.jpg");
-	  pic.copy(new Picture("spiderManGreenScreen.jpg"), 150, 200);
-	  pic.explore();
-	  pic.write("newSpidermanGreenScreen.jpg");
+	  Picture pic = new Picture("moon-surface.jpg");
+	  Picture spiderman = new Picture("newspiderManGreenScreen.jpg");
+	  
+	  spiderman.chromakeyGreenScreen(pic);
+	  spiderman.explore();
+	  spiderman.write("spidermanOnTheMoon.jpg");
+
   }
   
 } // this } is the end of class Picture, put all new methods before this
