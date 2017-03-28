@@ -603,7 +603,67 @@ public class Picture extends SimplePicture
 		  }
 	  }
   }
-
+  
+  public void steganographyEncode(Picture hiddenPicture)
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  Pixel [][] hiddenData = hiddenPicture.getPixels2D();
+	  
+	  Pixel hiddenPixel = null;
+	  Pixel currentPixel = null;
+	  
+	  for(int row = 0; row < currentPicture.length;  row ++)
+	  {
+		  for(int col = 0; col < currentPicture[0].length; col ++)
+		  {
+			  hiddenPixel = hiddenData[row][col];
+			  currentPixel = currentPicture[row][col];
+			  if(hiddenPixel.getRed() == 255 && hiddenPixel.getGreen() == 255 && hiddenPixel.getBlue() == 255)
+			  {
+				  int currentRed = currentPixel.getRed();
+				  if(currentRed % 2 == 0)
+				  {
+					  currentPixel.setRed(currentRed + 1);
+				  }
+			  }
+			  else
+			  {
+				  int currentRed = currentPixel.getRed();
+				  if (currentRed % 2 != 0)
+				  {
+					  currentPixel.setRed(currentRed - 1);  
+				  }
+			  }
+		  }
+	  }
+	  this.write("encrypted.png");
+	  this.explore();
+	  
+  }
+  
+  public void steganographyDecode()
+  {
+	  Pixel [][] decoded = this.getPixels2D();
+	  Pixel currentPixel = null;
+	  
+	  for(int row = 0; row < decoded.length; row ++)
+	  {
+		  for(int col = 0; col < decoded[0].length; col ++)
+		  {
+			  //DFFF00
+			  currentPixel = decoded[row][col];
+			  int currentRed = currentPixel.getRed();
+			  
+			  if(currentRed % 2 == 0)
+			  {
+				  currentPixel.setColor(new Color(127, 255, 0));
+			  }
+			  
+		  }
+	  }
+	  this.write("decoded.png");
+	  this.explore();
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
@@ -629,12 +689,6 @@ public class Picture extends SimplePicture
 //	  r2d2.createValentines();
 //	  r2d2.explore();
 	  
-	  Picture pic = new Picture("moon-surface.jpg");
-	  Picture spiderman = new Picture("newspiderManGreenScreen.jpg");
-	  
-	  spiderman.chromakeyGreenScreen(pic);
-	  spiderman.explore();
-	  spiderman.write("spidermanOnTheMoon.jpg");
 
   }
   

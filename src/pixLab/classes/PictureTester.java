@@ -227,6 +227,17 @@ public class PictureTester
 	  spiderman.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("base image.png");
+	  source.explore();
+	  Picture hidden = new Picture("hiddenImage.png");
+	  source.steganographyEncode(hidden);
+	  source.explore();
+	  hidden.explore();
+	  source.steganographyDecode();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -269,6 +280,7 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	  //testGlitchArt();
-	  testChromakey();
+	  //testChromakey();
+	  testSteganography();
   }
 }
